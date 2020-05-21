@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dj1.css">
+    <link rel="stylesheet" href="./swiper.min.css">
+    <script src="./jquery.min.js"></script>
+    <script src="./swiper.min.js"></script>
+</head>
+
+<body>
+    <div>
+
+        <div class="header">
+            <ul class="top dw">
+                <li><a href="http://www.gov.cn/" target="_blank">中央政府门户网站</a></li>
+                <li><a href="http://www.qh.gov.cn" target="_blank">省政府门户网站</a></li>
+                <li><a href="http://www.haixi.gov.cn" target="_blank">州政府门户网站</a></li>
+                <li><a href="http://www.gemrd.gov.cn" target="_blank">市人大网站</a></li>
+            </ul>
+        </div>
+        <div class="logo dw">
+            <img src="./assets/logo.jpg" alt="">
+        </div>
+        <div class="nav">
+            <ul class="dw navList">
+                <li v-for='(v,i) in nav' class='active' @click="sel(i)" onclick='sel(this)'>
+                    首页1
+                </li>
+                <li v-for='(v,i) in nav' :class='{active:i==active}' @click="sel(i)" onclick='sel(this)'>
+                    首页2
+                </li>
+                <li v-for='(v,i) in nav' :class='{active:i==active}' @click="sel(i)" onclick='sel(this)'>
+                    首页3
+                </li>
+            </ul>
+        </div>
+        <div class="notice dw">
+            <div>
+                <img src="./assets/notice.png" alt="">
+                <span>通知公告：党建相关最新通知公告消息内容</span>
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="请输入关键字">
+                <div>
+                    <img src="./assets/search.png" alt="">
+                </div>
+
+            </div>
+        </div>
+        <div class="newsBox dw">
+            <div class="newsBox_l">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="newsBox_r">
+                <div class="newsBox_r_t">
+                    <div class="jrtt">
+                        今日头条
+                    </div>
+                    <div class="item">
+                        <div class="title">经济开发区开展思想作风整顿</div>
+                        <div class="des">经济开发区及时贯彻落实全县招商引资格尔木经济开发区及时贯彻落实招商引资招商引资</div>
+                    </div>
+                    <div class="item">
+                        <div class="title">经济开发区开展思想作风整顿</div>
+                        <div class="des">经济开发区及时贯彻落实全县招商引资格尔木经济开发区及时贯彻落实招商引资招商引资</div>
+                    </div>
+                    <div class="item">
+                        <div class="title">经济开发区开展思想作风整顿</div>
+                        <div class="des">经济开发区及时贯彻落实全县招商引资格尔木经济开发区及时贯彻落实招商引资招商引资</div>
+                    </div>
+                </div>
+                <div class="newsBox_r_b">
+                    <div class="stitle">格尔木信息</div>
+                    <div class="item">
+                        <div class="title">经济开发区开展思想作风整顿</div>
+                        <div class="des">经济开发区及时贯彻落实全县招商引资格尔木经济开发区及时贯彻落实招商引资招商引资</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="middle dw">
+            <div class="middle_l mR">
+                <div class="newstitle">
+                    <div>
+                        <img src="./assets/fc.png" class="fc">
+                        干部工作
+                    </div>
+                    <img src="./assets/more.png" class="more">
+                </div>
+                <div class="newslist">
+                    <div class="item" v-for='(v,i) in gblist'>
+                        <img src="./assets/item.png" alt="">
+                        <span>{{v.title}}</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="middle_m mR">
+                <div class="newstitle">
+                    <div>
+                        <img src="./assets/fc.png" class="fc">
+                        老干部工作
+                    </div>
+                    <img src="./assets/more.png" class="more">
+                </div>
+                <div class="newslist">
+                    <div class="item" v-for='(v,i) in gblist'>
+                        <img src="./assets/item.png" alt="">
+                        <span>{{v.title}}</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="middle_r ">
+                <div class="newstitle">
+                    <div>
+                        <img src="./assets/fc.png" class="fc">
+                        机关效能
+                    </div>
+                    <img src="./assets/more.png" class="more">
+                </div>
+                <div class="newslist">
+                    <div class="item" v-for='(v,i) in gblist'>
+                        <img src="./assets/item.png" alt="">
+                        <span>{{v.title}}</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="link dw">
+            <div class="link_l mR">
+                <div class="link_l_t mB">
+                    <img src="./assets/slogan.png" alt="">
+                </div>
+                <div class="link_l_b">
+                    <div class="link_l_b_l mR">
+                        <div class="newstitle">
+                            <div>
+                                <img src="./assets/fc.png" class="fc">
+                                文件汇编
+                            </div>
+                            <img src="./assets/more.png" class="more">
+                        </div>
+                        <div class="newslist">
+                            <div class="item" v-for='(v,i) in gblist'>
+                                <img src="./assets/item.png" alt="">
+                                <span>{{v.title}}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="link_l_b_r">
+                        <div class="newstitle">
+                            <div>
+                                <img src="./assets/fc.png" class="fc">
+                                人才工作
+                            </div>
+                            <img src="./assets/more.png" class="more">
+                        </div>
+                        <div class="newslist">
+                            <div class="item" v-for='(v,i) in gblist'>
+                                <img src="./assets/item.png" alt="">
+                                <span>{{v.title}}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="link_r">
+                <div class="item">
+
+                    <img src="./assets/r1.png" alt="">
+                    <span>外部链接</span>
+
+                </div>
+                <div class="item">
+                    <img src="./assets/r2.png" alt="">
+                    <span>外部链接</span>
+                </div>
+                <div class="item">
+                    <img src="./assets/r3.png" alt="">
+                    <span>外部链接</span>
+                </div>
+                <div class="item">
+                    <img src="./assets/r4.png" alt="">
+                    <span>外部链接</span>
+                </div>
+                <div class="item">
+                    <img src="./assets/r4.png" alt="">
+                    <span>外部链接</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle2 dw">
+            <div class="middle2_l mR">
+                <div class="newstitle">
+                    <div>
+                        <img src="./assets/fc.png" class="fc">
+                        干部工作
+                    </div>
+                    <img src="./assets/more.png" class="more">
+                </div>
+                <div class="newslist">
+                    <div class="item" v-for='(v,i) in gblist'>
+                        <img src="./assets/item.png" alt="">
+                        <span>{{v.title}}</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="middle2_m mR">
+                <div class="newstitle">
+                    <div>
+                        <img src="./assets/fc.png" class="fc">
+                        老干部工作
+                    </div>
+                    <img src="./assets/more.png" class="more">
+                </div>
+                <div class="newslist">
+                    <div class="item" v-for='(v,i) in gblist'>
+                        <img src="./assets/item.png" alt="">
+                        <span>{{v.title}}</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="middle2_r ">
+                <div class="newstitle">
+                    <div>
+                        <img src="./assets/fc.png" class="fc">
+                        机关效能
+                    </div>
+                    <img src="./assets/more.png" class="more">
+                </div>
+                <div class="newslist">
+                    <div class="item" v-for='(v,i) in gblist'>
+                        <img src="./assets/item.png" alt="">
+                        <span>{{v.title}}</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer dw">
+            <div class="newstitle">
+                <div>
+                    <img src="./assets/fc.png" class="fc">
+                    党课理论
+                </div>
+
+            </div>
+            <div class="list">
+                <div class="item">
+                    <img src="./assets/zhengfu.gif" alt="">
+
+                </div>
+                <div class="item">
+                    <img src="./assets/中国共产党新闻.jpg" alt="">
+
+                </div>
+                <div class="item">
+                    <img src="./assets/zgxww.gif" alt="">
+
+                </div>
+                <div class="item">
+                    <img src="./assets/menu_logo.gif" alt="">
+
+                </div>
+                <div class="item">
+                    <img src="./assets/qhailogo4.gif" alt="">
+
+                </div>
+                <div class="item">
+                    <img src="./assets/hxdj.gif" alt="">
+
+                </div>
+                <div class="item">
+                    <img src="./assets/dlhdj.gif" alt="">
+
+                </div>
+                <div class="item">
+                    <img src="./assets/dybgjy.gif" alt="">
+
+                </div>
+                <div class="item">
+                    <img src="./assets/sjy.gif" alt="">
+
+                </div>
+                <div class="item">
+                    <img src="./assets/dybgjy.gif" alt="">
+
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="dw info">
+                <div>中共格尔木市委组织部 格尔木党建</div>
+                <div>地址：格尔木市八一东路001号; 联系电话：09798410054 <span style='color:red'>青ICP备08000094号</span></div>
+                <div>格公网备 63280102000002</div>
+                <img class="gh" src="./assets/dh.gif" />
+                <img class="red" src="./assets/red.png" />
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: 5000, //可选选项，自动滑动
+        pagination: '.swiper-pagination',
+        prevButton: '.swiper-button-prev',
+        nextButton: '.swiper-button-next',
+    })
+
+    function sel(dom) {
+        let $dom = $(dom);
+        $dom.addClass('active').siblings().removeClass('active');
+    }
+</script>
+
+</html>
